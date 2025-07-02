@@ -1,0 +1,845 @@
+/* Estilos base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed; /* o fixed si deseas que se quede arriba al hacer scroll */
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000;
+  padding: 5px 0; 
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header.scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1); /* fondo vidrio */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 4px 0;  /* 🔥 más delgado */
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+
+ footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+ position: relative;
+  z-index: 10;
+}
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+/* Menú base */
+.logo-nav {
+  display: flex;
+  justify-content: space-between; /* Esto alinea el logo a la izquierda y el menú/botón a la derecha */
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+nav ul li a {
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: white;
+  color: #003366;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  
+}
+
+
+
+
+
+/* Carrusel principal */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.slide-bg {
+  height: 100%;
+}
+
+/* Capa oscura encima del fondo */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+
+/* Título del banner */
+.overlay h2 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+/* Tarjetas */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+  width: 160px;
+  color: white;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card i {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #00bfff;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Flechas Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  font-size: 18px;
+}
+
+
+.experiencia {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.experiencia-texto h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.experiencia-texto p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.resaltado-azul {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.valores-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.valor-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.valor-card i {
+  font-size: 40px;
+  color: #007acc;
+  margin-bottom: 15px;
+}
+
+.valor-card h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #003366;
+}
+
+.valor-card p {
+  color: #444;
+  font-size: 16px;
+}
+
+/* Animación activa */
+.valor-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.valor-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+
+.portafolio-parallax {
+  background-image: url('https://images.pexels.com/photos/4709286/pexels-photo-4709286.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portafolio-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  flex-wrap: wrap; /* para que en móvil se acomode */
+}
+
+.portafolio-contenido h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+  
+}
+
+
+.typewriter-movil {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.typewriter-movil .linea1,
+.typewriter-movil .linea2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ffffff;
+  width: 0; /* ← esto oculta el texto inicialmente */
+  animation: typing 2s steps(15, end) forwards;
+}
+
+.typewriter-movil .linea2 {
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+  color: #00bfff;
+  font-weight: bold;
+  border-right: 2px solid #00bfff00;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+
+
+
+
+.btn-vermas {
+  background-color: #f0f0f0; /* gris claro */
+  color: #003366; /* texto oscuro como el branding de Telecom */
+  padding: 10px 25px;
+  text-decoration: none;
+  border: 2px solid white; /* borde blanco */
+  border-radius: 5px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vermas:hover {
+  background-color: #e0e0e0; /* un gris más oscuro al pasar el mouse */
+}
+
+
+.seccion-destacados-img {
+  padding: 80px 20px;
+  background-color: #f4f8fb;
+  text-align: center;
+  overflow: hidden;
+}
+
+.seccion-destacados-img h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #003366;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.slider .item {
+  position: absolute;
+  width: 260px;
+  height: 360px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+  overflow: hidden;
+}
+
+.slider .item img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slider .item h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #003366;
+}
+
+/* ✅ Solo la tarjeta activa flota al pasar el mouse */
+.slider .item.activo {
+  z-index: 2;
+  transform: scale(1.1) translateY(-10px);
+  filter: none;
+  opacity: 1;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.slider .item.activo:hover {
+  transform: scale(1.15) translateY(-25px);
+}
+
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.95);
+  color: #ddd;
+  padding: 50px 20px 30px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #00bfff;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.footer-logo p {
+  margin: 12px 0 0;
+  max-width: 300px;
+  color: #aaa;
+}
+
+.footer-links,
+.footer-products,
+.footer-contacto {
+  flex: 1 1 220px;
+}
+
+.footer-links h4,
+.footer-products h4,
+.footer-contacto h4 {
+  color: #fff;
+  margin-bottom: 14px;
+  font-size: 16px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+}
+
+.footer-redes {
+  margin-top: 10px;
+}
+
+.footer-redes a {
+  margin-right: 10px;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.footer-copy {
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  color: #888;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-copy a {
+  margin: 0 10px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px; 
+  }
+
+  .footer-links,
+  .footer-products,
+  .footer-contacto {
+    margin-bottom: 0; 
+  }
+
+  .footer-links h4,
+  .footer-products h4,
+  .footer-contacto h4 {
+    margin-bottom: 8px; 
+  }
+
+  .footer-links ul,
+  .footer-products ul,
+  .footer-contacto p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5; 
+  }
+
+  .footer-logo p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f5f5f5;
+  --accent-color: #0077cc;
+  --footer-bg: #222222;
+  --footer-text: #cccccc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode a {
+  color: var(--text-color);
+}
+
+body.dark-mode a:hover {
+  color: var(--accent-color);
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1f1f1f;
+  --footer-bg: #000000;
+  --footer-text: #aaaaaa;
+}
+
+header, footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+.valor-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: background 0.3s;
+}
+
+.valor-card i {
+  color: var(--accent-color);
+}
+
+.btn-vermas {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-vermas:hover {
+  background-color: #005fa3;
+}
+
+#toggle-dark {
+  position: fixed;
+  top: 8px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+#toggle-dark i {
+  font-size: 18px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode #toggle-dark i {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  #toggle-dark {
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  /* ✅ HEADER no fijo */
+  header {
+    position: static;
+    background-color: #ffffff;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  header.scrolled {
+    position: static;
+    background-color: #ffffff;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
+
+  /* ✅ MARGEN compensado si se usaba header fijo */
+  main {
+    margin-top: 0;
+  }
+
+  .hero-carousel {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .swiper,
+  .swiper-slide,
+  .slide-bg {
+    height: auto;
+    min-height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .slide-bg {
+    position: relative;
+  }
+
+  .overlay {
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .overlay h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .card i {
+    font-size: 30px;
+  }
+
+  /* ✅ Botón menú hamburguesa */
+  .menu-toggle {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .menu-toggle::before,
+  .menu-toggle::after,
+  .menu-toggle span {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: rgb(3, 7, 255);
+    transition: 0.3s;
+    left: 0;
+  }
+
+  .menu-toggle::before {
+    top: 6px;
+  }
+
+  .menu-toggle span {
+    top: 13px;
+  }
+
+  .menu-toggle::after {
+    top: 20px;
+  }
+
+  .menu-toggle.active::before {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .menu-toggle.active span {
+    opacity: 0;
+  }
+
+  .menu-toggle.active::after {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+
+  /* ✅ Menú deslizante */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  nav.show {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: start;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+
+  /* ✅ Otros ajustes */
+  .logo-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .valores-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .valor-card {
+    width: 90%;
+  }
+
+  .imagen {
+    order: 1;
+  }
+
+  .experiencia-texto {
+    order: 2;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .typewriter-movil .linea1,
+  .typewriter-movil .linea2 {
+    font-size: 30px;
+  }
+
+  .experiencia-texto p {
+    font-size: 14px;
+  }
+
+  /* Footer espaciado menor */
+  footer .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  footer h3 {
+    margin-bottom: 8px;
+  }
+}

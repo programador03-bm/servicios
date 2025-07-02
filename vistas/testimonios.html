@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonios</title>
+  <link rel="icon" href="../img/logo.png" type="image/png">
+  <link rel="stylesheet" href="../css/testimonias.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../js/scrip.js"></script>
+</head>
+<body>
+
+  <header>
+    <button id="toggle-dark"><i class="fas fa-moon"></i></button>
+    <div class="logo-nav">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="Logo de la empresa" style="height:60px;">
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu(this)"></button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+          <li><a href="beneficios.html"><i class="fas fa-star"></i> Beneficios</a></li>
+          <li><a href="testimonios.html" class="activo"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
+          <li><a href="contactos.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+<section class="seccion-testimonios">
+  <h2>Opiniones de nuestros clientes</h2>
+  <div class="contenedor-testimonios">
+    
+    <div class="testimonio fila izquierda">
+      <img src="../img/38544311_8640681.png" alt="Cliente feliz 1">
+      <div class="texto">
+        <blockquote>"El servicio fue impecable y la instalación muy rápida."</blockquote>
+        <cite>— Laura P.</cite>
+      </div>
+    </div>
+
+    <div class="testimonio fila derecha">
+      <img src="../img/38478590_8638722.png" alt="Cliente feliz 2">
+      <div class="texto">
+        <blockquote>"Gracias a ellos nuestra oficina se siente segura y conectada."</blockquote>
+        <cite>— Andrés M.</cite>
+      </div>
+    </div>
+
+    <div class="testimonio fila izquierda">
+      <img src="../img/38478590_8638722.png" alt="Cliente feliz 3">
+      <div class="texto">
+        <blockquote>"El soporte técnico es lo mejor. Recomiendo 100%."</blockquote>
+        <cite>— Daniela R.</cite>
+      </div>
+    </div>
+
+    <div class="testimonio fila derecha">
+      <img src="../img/38478590_8638722.png" alt="Cliente feliz 4">
+      <div class="texto">
+        <blockquote>"Con su internet empresarial todo funciona sin cortes."</blockquote>
+        <cite>— José V.</cite>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-logo">
+        <img src="../img/logo.png" alt="Logo Telecom & Energy SAC">
+        <p>Telecom & Energy SAC – Soluciones tecnológicas integrales</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces útiles</h4>
+        <a href="../index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contactos.html">Contacto</a>
+      </div>
+      <div class="footer-products">
+        <h4>Productos</h4>
+        <a href="#productos">Internet</a>
+        <a href="#productos">CCTV</a>
+        <a href="#productos">Data Center</a>
+        <a href="#productos">Energía</a>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contáctanos</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Piura, Perú</p>
+        <p><i class="fas fa-phone-alt"></i> +51 999 123 456</p>
+        <p><i class="fas fa-envelope"></i> contacto@telecomenergy.pe</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2025 Telecom & Energy SAC. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- CONTENEDOR DEL BOTÓN Y MENSAJE -->
+<div class="chatbot-float-container">
+  <div class="chat-msg-bubble" id="chatMensaje">¿Te ayudo en algo?</div>
+  <div class="chatbot-float" id="chatbotToggle">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+</div>
+
+<!-- CHATBOX -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">Asistente Virtual</div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Escribe aquí...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- ESTILOS -->
+<style>
+.chatbot-float-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.chat-msg-bubble {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: aparecerDesaparecer 7s infinite;
+  white-space: nowrap;
+}
+
+@keyframes aparecerDesaparecer {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-float {
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.chat-header {
+  background: #075e54;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-body {
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-msg {
+  background: #e1ffc7;
+  padding: 8px 12px;
+  border-radius: 10px;
+  align-self: flex-start;
+  max-width: 80%;
+}
+
+.chat-msg.user {
+  background: #dcf8c6;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+.chat-input button {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+let visible = false;
+let paso = 0;
+let nombre = "";
+
+document.getElementById("chatbotToggle").onclick = function () {
+  visible = !visible;
+  document.getElementById("chatWindow").style.display = visible ? "flex" : "none";
+  const mensaje = document.getElementById("chatMensaje");
+
+  if (visible) {
+    // Ocultar mensaje al abrir
+    mensaje.style.display = "none";
+
+    if (paso === 0) {
+      agregarBot("¡Hola! ¿Cuál es tu nombre?");
+      paso = 1;
+    }
+  } else {
+    // Volver a mostrar mensaje después de 4 segundos al cerrar
+    setTimeout(() => {
+      mensaje.style.display = "block";
+    }, 4000);
+  }
+};
+
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const texto = input.value.trim();
+  if (texto === "") return;
+
+  agregarUsuario(texto);
+  input.value = "";
+
+  if (paso === 1) {
+    nombre = texto;
+    setTimeout(() => agregarBot(`Encantado, ${nombre}. 😊`), 500);
+    setTimeout(() => agregarBot("¿Quieres que te lleve a mi WhatsApp para ayudarte mejor? (sí/no)"), 1000);
+    paso = 2;
+  } else if (paso === 2) {
+    if (texto.toLowerCase() === "sí" || texto.toLowerCase() === "si") {
+      agregarBot("¡Perfecto! Te llevaré a WhatsApp ahora mismo...");
+      setTimeout(() => {
+        window.location.href = "https://wa.me/51999123456"; // Cambia este número
+      }, 1500);
+    } else {
+      agregarBot("Está bien. Si necesitas ayuda, aquí estaré. 😊");
+    }
+    paso = 3;
+  }
+}
+
+function agregarBot(texto) {
+  const div = document.createElement("div");
+  div.className = "chat-msg";
+  div.textContent = texto;
+  document.getElementById("chatBody").appendChild(div);
+  scrollChat();
+}
+
+function agregarUsuario(texto) {
+  const div = document.createElement("div");
+  div.className = "chat-msg user";
+  div.textContent = texto;
+  document.getElementById("chatBody").appendChild(div);
+  scrollChat();
+}
+
+function scrollChat() {
+  const body = document.getElementById("chatBody");
+  body.scrollTop = body.scrollHeight;
+}
+</script>
+
+
+
+
+</body>
+</html>

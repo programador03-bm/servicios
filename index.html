@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Empresa Tech</title>
+  <link rel="icon" href="../img/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/index.css">
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Font Awesome Free CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...tu-integridad..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/scrip.js"></script>
+
+
+</head>
+<body>
+
+ <header>
+    <button id="toggle-dark"><i class="fas fa-moon"></i></button>
+
+        <div class="logo-nav">
+            <a href="index.html">
+            <img src="img/logo.png" alt="Logo de la empresa" style="height:60px;">
+            </a>
+
+            <button class="menu-toggle" onclick="toggleMenu(this)"></button>
+               <nav id="main-nav">
+                <ul>
+                  <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                  <li><a href="vistas/servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+                  <li><a href="vistas/beneficios.html"><i class="fas fa-star"></i> Beneficios</a></li>
+                  <li><a href="vistas/testimonios.html"><i class="fas fa-comment-dots"></i> Testimonios</a></li>
+                  <li><a href="vistas/contactos.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+              </nav>
+        </div>
+
+      
+
+</header>
+
+
+  <main>
+<section class="hero-carousel">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide slide-bg" style="background-image: url('https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg');">
+        <div class="overlay">
+          <h2>Soluciones Tecnológicas a tu Alcance</h2>
+          <div class="cards-container">
+            <div class="card"><i class="fas fa-building"></i><p>Infraestructura</p></div>
+            <div class="card"><i class="fas fa-lock"></i><p>Seguridad</p></div>
+            <div class="card"><i class="fas fa-wifi"></i><p>Internet</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide slide-bg" style="background-image: url('img/banner2.jpg');">
+        <div class="overlay">
+          <h2>Soluciones Tecnológicas a tu Alcance</h2>
+          <div class="cards-container">
+            <div class="card"><i class="fas fa-building"></i><p>Infraestructura</p></div>
+            <div class="card"><i class="fas fa-lock"></i><p>Seguridad</p></div>
+            <div class="card"><i class="fas fa-wifi"></i><p>Internet</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Fin swiper-wrapper -->
+
+    <!-- ✅ Botones dentro del swiper -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+  </div> <!-- Fin swiper -->
+</section>
+
+<section class="experiencia">
+  <div class="imagen"></div>
+  <div class="experiencia-texto">
+    <h2 class="typewriter-movil">
+      <span class="linea1">Con amplia</span><br>
+      <span class="linea2 resaltado-azul">experiencia en proyectos</span>
+    </h2>
+    <p>Contamos con personal altamente calificado para llevar a cabo su proyecto</p>
+  </div>
+</section>
+
+
+<section class="valores-seccion">
+  <div class="valores-container">
+    <div class="valor-card">
+      <i class="fas fa-handshake"></i>
+      <h3>Compromiso</h3>
+      <p>Nos comprometemos con el éxito de tu proyecto.</p>
+    </div>
+    <div class="valor-card">
+      <i class="fas fa-users-cog"></i>
+      <h3>Recurso humano</h3>
+      <p>Contamos con profesionales calificados.</p>
+    </div>
+    <div class="valor-card">
+      <i class="fas fa-microchip"></i>
+      <h3>Tecnología de punta</h3>
+      <p>Usamos herramientas modernas y eficientes.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="portafolio-parallax">
+  <div class="portafolio-contenido">
+    <h2><span class="resaltado-azul">BM ,</span> contamos con un amplio Portafolio de Productos de Calidad y Última Generación</h2>
+    <a href="vistas/servicios.html" class="btn-vermas">Ver más</a>
+  </div>
+</section>
+
+
+
+<section class="seccion-destacados-img">
+  <h2>Productos y Servicios Destacados</h2>
+  <div class="slider">
+    <div class="item"><img src="https://images.pexels.com/photos/1181315/pexels-photo-1181315.jpeg" alt=""><h3>Redes Empresariales</h3></div>
+    <div class="item"><img src="https://images.pexels.com/photos/3944405/pexels-photo-3944405.jpeg" alt=""><h3>Videovigilancia</h3></div>
+    <div class="item"><img src="https://images.pexels.com/photos/4254161/pexels-photo-4254161.jpeg" alt=""><h3>Automatización</h3></div>
+    <div class="item"><img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg" alt=""><h3>Cableado Estructurado</h3></div>
+    <div class="item"><img src="https://images.pexels.com/photos/1181316/pexels-photo-1181316.jpeg" alt=""><h3>Instalación de CCTV</h3></div>
+  </div>
+</section>
+
+  </main>
+
+<footer class="footer">
+  <div class="footer-contenido">
+    <!-- Logo y descripción breve -->
+    <div class="footer-logo">
+      <img src="img/logo.png" alt="Logo Telecom & Energy SAC">
+      <p>Telecom & Energy SAC – Soluciones tecnológicas integrales</p>
+    </div>
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-links">
+      <h4>Enlaces útiles</h4>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Productos destacados con mini-bullets -->
+    <div class="footer-products">
+      <h4>Productos</h4>
+      <a href="#productos">Internet</a>
+      <a href="#productos">CCTV</a>
+      <a href="#productos">Data Center</a>
+      <a href="#productos">Energía</a>
+    </div>
+
+    <!-- Información de contacto y redes -->
+    <div class="footer-contacto">
+      <h4>Contáctanos</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Piura, Perú</p>
+      <p><i class="fas fa-phone-alt"></i> +51 999 123 456</p>
+      <p><i class="fas fa-envelope"></i> contacto@telecomenergy.pe</p>
+      <div class="footer-redes">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    &copy; 2025 Telecom & Energy SAC. Todos los derechos reservados. | <a href="#politicas">Políticas de privacidad</a> | <a href="#terminos">Términos y condiciones</a>
+  </div>
+</footer>
+
+
+<!-- CONTENEDOR DEL BOTÓN Y MENSAJE -->
+<div class="chatbot-float-container">
+  <div class="chat-msg-bubble" id="chatMensaje">¿Te ayudo en algo?</div>
+  <div class="chatbot-float" id="chatbotToggle">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+</div>
+
+<!-- CHATBOX -->
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">Asistente Virtual</div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Escribe aquí...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- ESTILOS -->
+<style>
+.chatbot-float-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.chat-msg-bubble {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: aparecerDesaparecer 7s infinite;
+  white-space: nowrap;
+}
+
+@keyframes aparecerDesaparecer {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-float {
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.chat-header {
+  background: #075e54;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-body {
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-msg {
+  background: #e1ffc7;
+  padding: 8px 12px;
+  border-radius: 10px;
+  align-self: flex-start;
+  max-width: 80%;
+}
+
+.chat-msg.user {
+  background: #dcf8c6;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+.chat-input button {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+</style>
+
+<!-- SCRIPT -->
+<script>
+let visible = false;
+let paso = 0;
+let nombre = "";
+
+document.getElementById("chatbotToggle").onclick = function () {
+  visible = !visible;
+  document.getElementById("chatWindow").style.display = visible ? "flex" : "none";
+  const mensaje = document.getElementById("chatMensaje");
+
+  if (visible) {
+    // Ocultar mensaje al abrir
+    mensaje.style.display = "none";
+
+    if (paso === 0) {
+      agregarBot("¡Hola! ¿Cuál es tu nombre?");
+      paso = 1;
+    }
+  } else {
+    // Volver a mostrar mensaje después de 4 segundos al cerrar
+    setTimeout(() => {
+      mensaje.style.display = "block";
+    }, 4000);
+  }
+};
+
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const texto = input.value.trim();
+  if (texto === "") return;
+
+  agregarUsuario(texto);
+  input.value = "";
+
+  if (paso === 1) {
+    nombre = texto;
+    setTimeout(() => agregarBot(`Encantado, ${nombre}. 😊`), 500);
+    setTimeout(() => agregarBot("¿Quieres que te lleve a mi WhatsApp para ayudarte mejor? (sí/no)"), 1000);
+    paso = 2;
+  } else if (paso === 2) {
+    if (texto.toLowerCase() === "sí" || texto.toLowerCase() === "si") {
+      agregarBot("¡Perfecto! Te llevaré a WhatsApp ahora mismo...");
+      setTimeout(() => {
+        window.location.href = "https://wa.me/51999123456"; // Cambia este número
+      }, 1500);
+    } else {
+      agregarBot("Está bien. Si necesitas ayuda, aquí estaré. 😊");
+    }
+    paso = 3;
+  }
+}
+
+function agregarBot(texto) {
+  const div = document.createElement("div");
+  div.className = "chat-msg";
+  div.textContent = texto;
+  document.getElementById("chatBody").appendChild(div);
+  scrollChat();
+}
+
+function agregarUsuario(texto) {
+  const div = document.createElement("div");
+  div.className = "chat-msg user";
+  div.textContent = texto;
+  document.getElementById("chatBody").appendChild(div);
+  scrollChat();
+}
+
+function scrollChat() {
+  const body = document.getElementById("chatBody");
+  body.scrollTop = body.scrollHeight;
+}
+</script>
+
+
+
+
+
+
+</body>
+
+
+</html>
